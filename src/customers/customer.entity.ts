@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Sale } from "../sales/sale.entity";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Customer {
@@ -14,4 +15,7 @@ export class Customer {
 
     @Column()
     age: number;
+
+    @OneToMany(() => Sale, (sale) => sale.customer)
+    sales: Sale[];
 }

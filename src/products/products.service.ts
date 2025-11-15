@@ -6,7 +6,6 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class ProductsService {
-    private products: Array<any>;
     
     constructor(
         @InjectRepository(Product)
