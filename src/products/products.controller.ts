@@ -11,13 +11,6 @@ export class ProductsController {
         return this.productsService.findAll();
     }
 
-    @Get('/:id')
-    findOne(@Param('id') productID: number) {
-        return this.productsService.findOne(productID);
-    }
-
-
-
     @Post('/')
     create(@Body() productBody: UpsertProductDTO) {
         return this.productsService.create(productBody);
